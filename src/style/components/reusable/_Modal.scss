@@ -1,0 +1,125 @@
+.modal-content {
+  border-radius: 3px 3px 10px 10px !important;
+
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-footer {
+  @extend %flex-centered;
+}
+
+.modal__next-btn {
+  border-radius: 1.5em !important;
+  width: 100px;
+}
+
+.modal-header {
+  justify-content: space-between;
+  padding: 0px 1px !important;
+}
+
+.modal__tabs-title {
+  display: flex;
+  margin: 20px auto;
+  justify-content: center;
+
+  img {
+    height: 15px;
+    width: 15px;
+    margin-right: 20px;
+  }
+}
+
+.modal-body {
+  min-height: 250px;
+}
+
+.modal__tabs {
+  padding: 0 20px;
+}
+
+.modal-tab-selector {
+  background: $lightBlue;
+  width: 50%;
+  height: 5px;
+
+  display: block;
+}
+
+.modal-tab-selector {
+  background: transparent !important;
+  cursor: pointer;
+
+  &.active {
+    background: $lightBlue !important;
+  }
+}
+
+.img-icon-calender {
+  position: absolute;
+  top: 6px;
+  width: 15px;
+  height: 15px;
+  right: 34px;
+}
+
+.nextSlideBtn,
+.finishButton,
+.prevSlideBtn {
+
+  button,
+  input {
+    @extend %ActiveHideShow;
+  }
+}
+
+.companyModal,
+.travellerModal {
+
+  .modal__tabs-content,
+  .processing {
+    @extend %ActiveHideShow;
+  }
+}
+
+.processing-circule {
+  @extend %flex-centered;
+  color: $lightBlue;
+  border-radius: 50%;
+  padding: 30px;
+  height: 50px;
+  width: 50px;
+  border: 2px solid $lightBlue;
+}
+
+.modal__tabs-content-container {
+  @extend %flex-centered;
+  height: 100%;
+}
+
+.modal__subtitle {
+  color: #444;
+  position: relative;
+  margin-bottom: 20px;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #444;
+    width: 30px;
+    height: 1px;
+    margin-top: 6px;
+  }
+}
+
+.login-modal__title {
+  align-self: flex-start;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,98 @@
+.choose-your-world{
+    margin-top: 30px;
+    text-align: center;
+    
+   .choose-your-world-header{
+    margin-bottom: 50px;
+    h1{
+        font-weight: bolder;
+        color:grey;
+    }
+    p{
+        font-size:14px;
+        
+    }
+   }
+    .choose-your-world-details{
+        height: 360px;
+        position: relative;
+        padding: 0;
+        @media (max-width:991.98px) {
+           margin-bottom: 20px;
+          }
+          @media (max-width: 575.98px) {
+            order:1;
+          }
+            .details-img{
+                height: 100%;
+                width:100%;
+                position: absolute;
+                background-size: 100% 100%;
+                z-index: 1;
+               img{
+                height: 100%;
+                width:100%;
+                border-bottom-left-radius: 38px;
+                border-bottom-right-radius:38px;
+               }
+            }
+            .details-overlay{
+                height: 100%;
+                width:100%;
+                position: absolute;
+                z-index: 2;
+                border-bottom-left-radius: 38px;
+                border-bottom-right-radius:38px;
+                border-top-left-radius: 38px;
+                border-top-right-radius:38px;
+                background-color: rgba(0, 0, 0, 0.5);
+               
+                   
+                img{
+                   margin-top: 20px;
+                   margin-bottom: 10px;
+                   width:50px;
+                   height: 50px;
+                }
+                h2{
+                  color:white;
+                  text-align: left;
+                  font-size: 28px;
+                  width:300px;
+                  margin-left: 20px;
+                  margin-bottom: 10px;
+
+                }
+                p{
+                    color:white;
+                    text-align: left;
+                    width:400px;
+                  margin-left: 20px;
+                  font-size: 14px;
+                  @media (max-width: 575.98px) {
+                      font-size: 12px;
+                      width:300px;
+                }
+
+                }
+                button{
+                   background: white;
+                   color:green;
+                   border-radius: 100px;
+                   width: 100px;
+                   font-weight: bolder;
+                   font-size:16px;
+                  margin-top: 30px;
+                   margin-bottom: 15px;
+                }
+                h3{
+                    color:white;
+                    text-align: right;
+                    margin-right: 20px;
+                    font-weight: bold;
+                }
+               
+
+            }
+        }
+    }

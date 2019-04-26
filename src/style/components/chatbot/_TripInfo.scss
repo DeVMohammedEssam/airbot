@@ -1,0 +1,29 @@
+.TripInfo{
+    height: 45px;
+    width:340px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 1.5%;
+    padding-top: 5px;
+    display: inline-block;
+    .TripInfo-img{
+        margin-bottom: 23px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .TripInfo-input{
+        display: inline-block;
+        width:80%;
+        input{
+            width: 100%;
+            font-size: 12px;
+            outline: 0;
+            border:none;
+        }
+        h6{
+            color:gray;
+            font-size: 12px;
+        }
+    }
+}

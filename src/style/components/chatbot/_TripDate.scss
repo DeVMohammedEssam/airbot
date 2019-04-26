@@ -1,0 +1,33 @@
+.TripDate{
+    height: 45px;
+    width:163px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 1.5%;
+    padding-top: 5px;
+    display: inline-block;
+    @media (max-width:991.98px) {
+        width:167px;
+       }
+    .TripDate-img{
+        width:20px;
+        margin-bottom:  23px; 
+        margin-left: 10px;     
+    }
+    .TripDate-input{
+        display: inline-block;
+        width:75%;
+        margin-left: 10px;
+        input{
+            width: 95%;
+            font-size: 12px;
+            outline: 0;
+            border:none;
+        }
+        h6{
+            color:gray;
+            font-size: 11px;
+        }
+    }
+}

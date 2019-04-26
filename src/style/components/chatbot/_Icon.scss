@@ -1,0 +1,22 @@
+.Icon{
+    width: 80%;
+    height: 150px;
+    background-color: white;
+    border-radius: 40px;
+    display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        color: gray;
+        h1{
+         text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+        @media (max-width: 991.98px) {
+            margin-bottom: 20px;
+            }
+}

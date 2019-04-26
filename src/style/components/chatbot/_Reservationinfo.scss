@@ -1,0 +1,36 @@
+.ReservationInfo{
+    ul{
+        height: 55px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        background-color: white;
+        width:70%;
+        margin-left: 15%;
+        padding-top: 15px;
+        border-radius: 20px;
+        @media (max-width: 991.98px) {
+            width:100%;
+            margin-left: 0;
+           
+            }
+        li{
+            color: gray;
+            font-size: 14px;
+            font-weight: 600;
+            width:11%;
+            text-align: center;
+            @media (max-width: 991.98px) {
+                font-size:13px;
+              }
+              @media (max-width: 767.98px) {
+              font-size:12px;
+              }
+              @media (max-width: 575.98px) {
+                font-size: 11px;
+               
+          }
+           
+        }
+    }
+}

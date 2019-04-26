@@ -1,0 +1,20 @@
+%flex-centered {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+%ActiveHideShow {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+%fullWidthAbs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}

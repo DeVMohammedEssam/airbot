@@ -1,0 +1,74 @@
+.chatbot__header {
+  height: 100vh;
+  position: relative;
+}
+.header__cover-img-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgb(20, 20, 20);
+  z-index: -1;
+  @media screen and (max-width: 630px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.inner-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 60%;
+  @media screen and (max-width: 630px) {
+    width: 100%;
+  }
+
+  background: url("/imagesAndIcons/blackwhiteAirplan.png");
+  background-size: cover;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.header__content {
+  float: right;
+  margin-right: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media screen and (max-width: 630px) {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+  color: $white;
+}
+.header__text {
+  line-height: 20px;
+}
+
+.header__icons-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  img {
+    width: 15px;
+    height: 15px;
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+  }
+}

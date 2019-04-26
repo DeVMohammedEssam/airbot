@@ -1,0 +1,10 @@
+@mixin invetOnHover($color, $inverteProp, $invertedPropColor) {
+  color: $color;
+  $inverteProp: $invertedPropColor;
+  transition: all 0.5 ease;
+  &:hover {
+    color: $invertedPropColor;
+    $inverteProp: $color;
+    transition: all 0.5 ease;
+  }
+}

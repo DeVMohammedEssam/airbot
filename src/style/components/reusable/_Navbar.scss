@@ -1,0 +1,49 @@
+.nav-link {
+  color: $white;
+}
+.nav-item .nav-link {
+  &:hover {
+    color: darken($white, 5%);
+  }
+}
+.nav-link.btn-navbar--custom {
+  padding: 1px;
+}
+.nav-link.active {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 3px;
+    display: block;
+    background: $white;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+.navbar__search-container {
+  position: relative;
+  width: 300px;
+
+  .form-control {
+    width: 100% !important;
+    border-radius: 1.5em;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+  }
+  .form-control:focus,
+  .form-control:active {
+    color: $lightBlue;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+  }
+  button {
+    position: absolute;
+    right: 5px;
+  }
+}

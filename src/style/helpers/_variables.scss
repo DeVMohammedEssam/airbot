@@ -1,0 +1,27 @@
+//colors
+/* 
+used in:[home,
+    
+*/
+$orange: #ffba33;
+.bg-orange {
+  background-color: $orange !important;
+}
+.text-orange {
+  color: $orange !important;
+}
+$lightBlue: #02979d;
+.bg-lightBlue {
+  background-color: $lightBlue !important;
+}
+.text-lightBlue {
+  color: $lightBlue !important;
+}
+
+$white: #fff;
+.bg-white {
+  background-color: $white;
+}
+.text-white {
+  color: $white;
+}

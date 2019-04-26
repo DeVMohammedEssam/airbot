@@ -1,0 +1,230 @@
+.Footer{
+    height: 150px;
+    width: 100%;
+    background: $orange;
+    position: relative;
+    margin: 300px 0 0 0;
+    z-index: 1;
+   
+  .plan{
+    position: absolute;
+    bottom: 52%;
+    left: 16%;
+    @media (max-width: 991.98px) {
+     
+      bottom: 60%;
+    }
+    @media (max-width: 767.98px) {
+      left: 14%;
+      bottom: 62%;
+    }
+    
+    @media (max-width: 575.98px) {
+      bottom: 70%;
+    }
+    img{
+     
+      width:330px;
+      @media (max-width: 991.98px) {
+          width:250px;
+        }
+        @media (max-width: 767.98px) {
+          width: 200px;
+        
+        }
+        
+        @media (max-width: 575.98px) {
+          width: 125px;
+      
+        }
+      
+  }
+  }
+  .services{
+    position: absolute;
+    z-index: 3;
+    right:8%;
+    bottom: 50%;
+    width:27%;
+    display: flex;
+    flex-flow: row wrap;
+    @media (max-width: 767.98px) {
+     flex-flow: column wrap;
+    bottom: 20%;
+    right:5%;
+   
+    }
+    @media (max-width: 575.98px) {
+    bottom: 3%;  
+    }
+    .right-services{
+       width: 37%;
+      
+    }
+    .left-services{
+      width: 37%;
+    
+   }
+    h3{
+     color:grey;
+     font-weight: bolder;
+     margin-bottom: 10px;
+     @media (max-width: 767.98px) {
+    margin-bottom: 5px;
+     
+     }
+     
+    }
+    a{
+      font-size: 14px;
+      font-weight: 500;
+      color:rgb(104, 139, 168);
+      @media (max-width: 991.98px) {
+        font-size: 12px;
+      }
+      @media (max-width: 767.98px) {
+        font-size: 11px;
+      }
+      @media (max-width: 575.98px) {
+       font-size: 9px; 
+        }
+      
+    }
+    hr{
+      width:20%;
+      height: .1px;
+      transform: rotate(90deg);
+      background-color: darkblue;
+      margin-top: 50px;
+      margin-right: 5%;
+      @media (max-width: 767.98px) {
+        transform: rotate(180deg);
+        margin: 0 0 5px 0;
+        width: 35%;
+       
+       }
+    }
+    
+  }
+  .airBot-team{
+    position:absolute;
+    z-index: 3;
+    width:60%;
+    left: 40%;
+    bottom: 3%;
+    display: flex;
+    flex-flow: row wrap;
+    @media (max-width: 767.98px) {
+      bottom:0;
+      left:20% ;
+    }
+    @media (max-width: 575.98px) {
+     left:11%;
+    }
+    
+    h3{
+      margin-right: 12%;
+      color:white;
+      @media (max-width: 991.98px) {
+        font-size: 16px;
+        margin-right: 10%;
+      }
+      @media (max-width: 767.98px) {
+        font-size: 12px;
+        margin-right: 8%;  
+      margin-top: 10px;      }
+      @media (max-width: 575.98px) {
+        font-size: 10px;
+       margin-right: 7%;
+       margin-top: 15px;
+        }
+    } 
+    ul{
+      width: 30%;
+      @media (max-width: 575.98px) {
+            width:19%;
+      }
+      li{
+        display: inline-flex;
+        margin-right: 10%;
+        @media (max-width: 991.98px) {
+          margin-right: 9%;
+        }
+        @media (max-width: 767.98px) {
+          margin-right: 7%;        }
+        @media (max-width: 575.98px) {
+          margin-right: 4%;
+          }
+        a{
+          font-size: 14px;
+          font-weight: 500;
+          color:rgb(104, 139, 168);
+          @media (max-width: 991.98px) {
+            font-size: 12px;
+          }
+          @media (max-width: 767.98px) {
+            font-size: 11px;
+          }
+          @media (max-width: 575.98px) {
+           font-size: 9px; 
+            }
+        }
+      }
+    }
+  }
+    .head-phone{
+        position: absolute;
+        right: 0px;
+        bottom: 30px;
+        height: 60px;
+        width: 5%;
+        background-color: rgb(28, 92, 145);
+        border-radius: 45% 0 0 45%;
+        z-index: 3;
+        @media (max-width: 767.98px) {
+          width:10%;
+        
+        }
+        .head-phone-img{
+            width: 50%;
+            height: 40px;
+            margin-left: 25%;
+            margin-top: 10px;
+            
+        }
+    }
+    .Footer-Left{
+      height: 150px;
+      width:15%;
+      position: absolute;
+      border-top-right-radius:100%; 
+      left: -3.1%;
+      background-color:$orange;
+      z-index: 2;
+       bottom:60%;
+    }
+  }
+  .Footer:before{
+    content: " ";
+    position: absolute;
+    height:320px;
+    width:42.5%;
+    border-radius: 100% 69%;
+    background:rgb(219, 219, 219);
+    bottom: 50.5%;
+    left:9%;
+  }
+  
+  .Footer:after{
+    content: " ";
+    position: absolute;
+    height: 295px;
+    background-color:$orange;
+    right: -10%;
+    bottom: 30px;
+    width: 66%;
+    border-radius: 100%  20% 40% 0% ;
+    
+  }
+  
+  

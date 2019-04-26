@@ -1,0 +1,48 @@
+body {
+    overflow-x: hidden;
+
+}
+
+//helpers
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/general";
+@import "helpers/placeholders";
+@import "helpers/flashMessages";
+//reusable
+@import "reusable/buttons";
+@import "reusable/inputs";
+@import "reusable/ImageFileReader";
+
+//components
+@import "./components/reusable/Navbar";
+@import "./components/reusable/Modal";
+@import "./components/chatbot/Header";
+//chatbot imports
+@import "./components/chatbot/ChooseYourWorld";
+@import "./components/chatbot/FlyNow";
+@import "./components/reusable/Footer";
+@import "./components/reusable/GreyFooter";
+
+@import "./components/chatbot/Chatbot";
+@import "./components/chatbot/CheapestTickets";
+@import "./components/chatbot/TravelerBenfits";
+
+//trips imports
+@import "./components/chatbot/Trips";
+@import "./components/chatbot/TripInfo";
+@import "./components/chatbot/TripDate";
+@import "./components/chatbot/ChooseYourTrip";
+@import "./components/chatbot/Catalonia";
+
+//Broacast imports
+@import "./components/chatbot/DashBoard";
+@import "./components/chatbot/OurTrips";
+@import "./components/chatbot/Staff";
+@import "./components/chatbot/StaffMember";
+@import "./components/chatbot/Analysis";
+@import "./components/chatbot/Icon";
+@import "./components/chatbot/Reservation";
+@import "./components/chatbot/ReservationInfo";
+//bootstrap imports
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

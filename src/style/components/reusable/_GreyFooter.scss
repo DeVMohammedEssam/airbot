@@ -1,0 +1,265 @@
+.GreyFooter{
+    height: 180px;
+    width: 100%;
+    background: rgb(200, 200, 200);
+    position: relative;
+    margin: 350px 0 0 0;
+    z-index: 1;
+
+    
+  
+  .ContactUs{
+    position:absolute;
+    z-index: 3;
+    width: 7%;
+    left: 3%;
+    bottom: 30%;
+   
+    
+    h3{
+      width:100%;
+      color:rgb(83, 83, 83);
+      text-align: left;
+      @media (max-width: 991.98px) {
+        font-size: 16px;
+        margin-right: 10%;
+      }
+      @media (max-width: 767.98px) {
+        font-size: 12px;
+        margin-right: 8%;  
+      margin-top: 10px;      }
+      @media (max-width: 575.98px) {
+        font-size: 10px;
+       margin-right: 7%;
+       margin-top: 15px;
+        }
+    } 
+    ul{
+        text-align: left;
+      width: 100%;
+      @media (max-width: 575.98px) {
+            width:19%;
+      }
+      li{
+      
+        margin-right: 10%;
+        @media (max-width: 991.98px) {
+          margin-right: 9%;
+        }
+        @media (max-width: 767.98px) {
+          margin-right: 7%;        }
+        @media (max-width: 575.98px) {
+          margin-right: 4%;
+          }
+        a{
+          font-size: 14px;
+          font-weight: 500;
+          color:grey;
+          @media (max-width: 991.98px) {
+            font-size: 12px;
+          }
+          @media (max-width: 767.98px) {
+            font-size: 11px;
+          }
+          @media (max-width: 575.98px) {
+           font-size: 9px; 
+            }
+        }
+      }
+    }
+  }
+  .services{
+    position: absolute;
+    z-index: 3;
+    right:8%;
+    bottom: 50%;
+    width:27%;
+    display: flex;
+    flex-flow: row wrap;
+    @media (max-width: 767.98px) {
+     flex-flow: column wrap;
+    bottom: 20%;
+    right:5%;
+   
+    }
+    @media (max-width: 575.98px) {
+    bottom: 3%;  
+    }
+    .right-services{
+       width: 37%;
+      
+    }
+    .left-services{
+      width: 37%;
+    
+   }
+    h3{
+        text-align: left;
+     color:rgb(83, 83, 83);
+     font-weight: bolder;
+     margin-bottom: 10px;
+     @media (max-width: 767.98px) {
+    margin-bottom: 5px;
+     
+     }
+     
+    }
+    ul{
+        text-align: left;
+   li{
+    a{
+      font-size: 14px;
+      font-weight: 500;
+      color:grey;
+      
+      @media (max-width: 991.98px) {
+        font-size: 12px;
+      }
+      @media (max-width: 767.98px) {
+        font-size: 11px;
+      }
+      @media (max-width: 575.98px) {
+       font-size: 9px; 
+        }
+      
+    }
+}
+}
+    hr{
+      width:20%;
+      height: .1px;
+      transform: rotate(90deg);
+      background-color: black;
+      margin-top: 50px;
+      margin-right: 5%;
+      @media (max-width: 767.98px) {
+        transform: rotate(180deg);
+        margin: 0 0 5px 0;
+        width: 35%;
+       
+       }
+    }
+    
+  }
+  .airBot-team{
+    position:absolute;
+    z-index: 3;
+    width:60%;
+    left: 40%;
+    bottom: 3%;
+    display: flex;
+    flex-flow: row wrap;
+    @media (max-width: 767.98px) {
+      bottom:0;
+      left:20% ;
+    }
+    @media (max-width: 575.98px) {
+     left:11%;
+    }
+    
+    h3{
+      margin-right: 12%;
+      color:white;
+      @media (max-width: 991.98px) {
+        font-size: 16px;
+        margin-right: 10%;
+      }
+      @media (max-width: 767.98px) {
+        font-size: 12px;
+        margin-right: 8%;  
+      margin-top: 10px;      }
+      @media (max-width: 575.98px) {
+        font-size: 10px;
+       margin-right: 7%;
+       margin-top: 15px;
+        }
+    } 
+    ul{
+      width: 30%;
+      @media (max-width: 575.98px) {
+            width:19%;
+      }
+      li{
+        display: inline-flex;
+        margin-right: 10%;
+        @media (max-width: 991.98px) {
+          margin-right: 9%;
+        }
+        @media (max-width: 767.98px) {
+          margin-right: 7%;        }
+        @media (max-width: 575.98px) {
+          margin-right: 4%;
+          }
+        a{
+          font-size: 14px;
+          font-weight: 500;
+          color:grey;
+          @media (max-width: 991.98px) {
+            font-size: 12px;
+          }
+          @media (max-width: 767.98px) {
+            font-size: 11px;
+          }
+          @media (max-width: 575.98px) {
+           font-size: 9px; 
+            }
+        }
+      }
+    }
+  }
+    .Messenger{
+        position: absolute;
+        right: 0px;
+        bottom: 290px;
+        height: 60px;
+        width: 5%;
+        background-color: rgb(85, 175, 248);
+        border-radius: 45% 0 0 45%;
+        z-index: 3;
+        @media (max-width: 767.98px) {
+          width:10%;
+        
+        }
+        .Messenger-img{
+            width: 50%;
+            height: 40px;
+            margin-left: 25%;
+            margin-top: 10px;
+            
+        }
+    }
+    .Footer-Left{
+      height: 150px;
+      width:15%;
+      position: absolute;
+      border-top-right-radius:100%; 
+      left: -3.3%;
+      background-color:rgb(200, 200, 200);
+      z-index: 2;
+       bottom:64%;
+    }
+  }
+  .GreyFooter:before{
+    content: " ";
+    position: absolute;
+    height:320px;
+    width:41.9%;
+    border-radius: 100% 69%;
+    background:white;
+    bottom: 44.5%;
+    left:9.8%;
+  }
+  
+  .GreyFooter:after{
+    content: " ";
+    position: absolute;
+    height: 295px;
+    background:rgb(200, 200, 200);
+    right: -10%;
+    bottom: 30px;
+    width: 66%;
+    border-radius: 100%  20% 40% 0% ;
+    
+  }
+  
+  

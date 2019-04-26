@@ -1,0 +1,21 @@
+.flash-message {
+    position: absolute !important;
+    top: 5rem;
+    z-index: 999999;
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    animation: fadeout 2s ease 2s 1 normal forwards;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

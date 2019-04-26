@@ -1,0 +1,77 @@
+.choose-your-world-flyNow{
+      @media (max-width: 991.98px) {
+        margin: 0 0 0 30px !important;
+          }
+       
+       margin: 0 !important;
+      
+    .fly-now-up{
+        margin-bottom: 20px;
+    } 
+    .fly-now-down{
+        @media (max-width: 991.98px) {
+            margin-bottom: 20px;
+          }
+    } 
+.card{
+    height: 170px;
+    width:100%;
+    border-radius: 20px;
+    @media (max-width: 991.98px) {
+        width:90%;
+      }
+    
+    .fly-now{
+        height: 150px;
+         position: relative;
+        background-size: 100% 100%;
+       .fly-now-img{
+          position: absolute;
+          z-index: 1;
+          height: 100%;
+          width:100%;
+          border-top-right-radius: 20px;
+              border-top-left-radius: 20px;
+          img{
+              height: 100%;
+              width:100%;
+              border-top-right-radius: 20px;
+              border-top-left-radius: 20px;
+          }
+       }
+       .fly-now-overlay{
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        position: absolute;
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        img{
+            text-align: center;
+            margin-top: 50px;
+        }
+        h4{
+            color:white;
+            width: 170px;
+            margin-top:10px;
+        }
+       }
+    }
+    .card-body{
+        padding: 5px 0 0 0;
+        h3{
+            display: inline-block;
+            font-weight: bolder;
+            color:$orange;
+            margin-right: 30px;
+            margin-left: 60px;
+        }
+        span{
+            font-weight: bold;
+            font-size: 11px;
+            color:grey;
+        }
+    }
+}
+}

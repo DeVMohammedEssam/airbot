@@ -1,0 +1,32 @@
+.DashBoard{
+    
+    background-color: rgb(219, 219, 219);
+
+    .DashBoard-Header{
+        background-color: white;
+        height: 50px;
+        padding-top: 15px;
+        .DashBoard-nav {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            height: 100%;
+         
+            li{
+                color: rgb(65, 65, 65);
+                font-size: 16px;
+                margin-right: 10px;
+                margin-left: 10px;
+                font-weight: 600;
+                cursor: pointer;
+               
+                
+            }
+            .active{
+                border-bottom: 3px solid $orange;
+              
+            }
+        }
+    }
+  
+}

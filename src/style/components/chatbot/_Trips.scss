@@ -1,0 +1,215 @@
+.Trips {
+    height: auto;
+    width: 100%;
+    background-color: rgb(219, 219, 219);
+    padding: 70px 0 50px 0;
+
+    h1 {
+        text-align: center;
+        color: gray;
+        font-weight: bold;
+    }
+
+    .trips-img {
+        width: 100%;
+    }
+
+    .TripType {
+        height: 35px;
+        width: 340px;
+        background-color: white;
+        border-radius: 5px;
+        margin-left: 20%;
+        margin-top: 30px;
+
+        @media (max-width: 575.98px) {
+            margin-left: 6.4%;
+        }
+
+        span {
+            display: inline-block;
+            color: grey;
+            font-size: 13px;
+            font-weight: 500;
+            height: 100%;
+            padding-top: 7px;
+            cursor: pointer;
+            transition: all .3s ease-in;
+        }
+
+        .one-way {
+            width: 25%;
+            padding-left: 13px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .round-trip {
+            width: 35%;
+            padding-left: 25px;
+
+        }
+
+        .multi-destination {
+
+            width: 40%;
+            padding-left: 15px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .active {
+
+            background-color: rgb(22, 112, 112);
+            color: white;
+        }
+    }
+
+    .flying {
+        margin-left: 18.7%;
+
+        @media (max-width: 575.98px) {
+            margin-left: 5%;
+        }
+    }
+
+    .by-price {
+        display: block;
+        width: 90px;
+        height: 20px;
+        margin-left: 20%;
+        margin-top: 20px;
+        outline: 0;
+        background-color: rgb(219, 219, 219);
+        border-radius: 5px;
+        cursor: pointer;
+
+        @media (max-width: 991.98px) {
+            margin-left: 40%;
+        }
+    }
+
+    .search-btn {
+        width: 90px;
+        height: 30px;
+        margin-left: 20%;
+        margin-top: 20px;
+        background-color: $orange;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+        color: rgb(73, 73, 73);
+        outline: 0;
+
+        @media (max-width: 991.98px) {
+            margin-left: 40%;
+        }
+
+        &:hover {
+            border: solid .5px #c58b17;
+        }
+    }
+
+    .cheapest-tickets {
+        width: 100%;
+        height: 170px;
+        background-color: white;
+        margin-top: 30px;
+        padding: 30px 0 0 0;
+        margin-bottom: 50px;
+
+        @media (max-width: 991.98px) {
+            height: 220px;
+        }
+
+        @media (max-width: 767.98px) {
+            height: 260px;
+        }
+
+        p {
+            text-align: left;
+            width: 45%;
+            font-size: 12px;
+            margin-left: 28%;
+            color: gray;
+
+            @media (max-width: 767.98px) {
+                font-size: 11px;
+            }
+        }
+
+        .many-trips {
+            margin-top: 30px;
+            margin-left: 33%;
+            width: 40%;
+
+            .manyTrip-img {
+                max-width: 10%;
+                margin-bottom: 10px;
+
+                @media (max-width: 767.98px) {
+                    margin-bottom: 30px;
+                }
+
+                @media (max-width: 575.98px) {
+                    margin-bottom: 50px;
+                    max-width: 20%;
+                }
+            }
+
+            h4 {
+                display: inline-block;
+                margin-left: 10px;
+                font-weight: bold;
+                color: gray;
+                width: 80%;
+
+                @media (max-width: 575.98px) {
+                    width: 70%;
+                }
+
+                span {
+                    color: rgb(22, 112, 112);
+                    font-size: 14px;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* add trips */
+.add-trip-form {
+    min-height: 100vh;
+    position: relative;
+    padding: 20px 0;
+
+    .card {
+        border-radius: 15px !important;
+        background-color: transparent;
+        box-shadow: 0 10px 20px rgba(#000, 0.4);
+    }
+
+
+    label {
+        color: #efefef;
+        font-weight: bolder;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url("/imagesAndIcons/addTripCover.jpg");
+        display: block;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+}
