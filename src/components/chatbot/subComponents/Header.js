@@ -108,12 +108,12 @@ class Header extends Component {
     const { traveller, company, userType } = this.props.user;
     let passwordError = "";
     if (userType === "0") {
-      if (traveller.password !== traveller.confirmPassword) {
+      if (traveller.password !== traveller.confirm_password) {
         passwordError = "password doesn't match cofirmation";
       }
     }
     if (userType === "1") {
-      if (company.companyPassword !== company.companyPasswordConfirmation) {
+      if (company.password !== company.confirm_password) {
         passwordError = "password doesn't match cofirmation";
       }
     }
@@ -123,7 +123,8 @@ class Header extends Component {
       const data = userType === "0"
         ? ({ ...traveller, type: userType })
         : ({ ...company, type: userType });
-      axios.post("https://4373f0d8.ngrok.io/api/user/", { data }).then(({ data }) => {
+     
+      axios.post("http://localhost:5000/api/user/", {data }).then(({ data }) => {
         $("button.close").click();
       })
 

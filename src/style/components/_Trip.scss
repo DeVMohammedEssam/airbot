@@ -1,0 +1,31 @@
+%shared{
+background-color: white;
+padding: 10px;
+border-radius: 10px;
+margin-bottom: 15px
+}
+.trip{
+    margin-top:100px;
+}
+.trip__aside__item{
+@extend %shared
+}
+.trip__aside__item__img{
+    width: 99%;
+    border-radius: 10px;
+
+}
+.trip__content__item{
+    @extend %shared
+}
+.trip__aside__item__info{
+    margin-top: 10px;
+}
+.trip__content__item__btn{
+    margin-right: 10px;
+  
+}
+.trip__content__item__btns{
+    display: flex;
+    justify-content: center;
+}

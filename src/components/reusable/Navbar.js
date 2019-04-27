@@ -2,7 +2,13 @@ import React from "react";
 import { Link, NavLink, withRouter } from "react-router-dom";
 import { logout } from "../../redux/actions/user";
 import { connect } from "react-redux";
+import $ from "jquery"
+  const onSearch=(e)=>{
+    e.preventDefault()
+    window.location.href="/trips?search="+$("#search").val()
+  }
 const Navbar = props => {
+
   return (<nav className="navbar navbar-expand-lg bg-orange">
     <div className="container">
       <Link to="/trips" className="navbar-brand" >
@@ -72,7 +78,7 @@ const Navbar = props => {
               </NavLink>
           </li>
           <form
-            action="/"
+            onSubmit={onSearch}
             method="post"
             className="form-inline my-2 my-lg-0 mx-auto"
           >
@@ -83,6 +89,8 @@ const Navbar = props => {
                 placeholder="Search"
                 aria-label="Search"
                 name="search"
+               id="search"
+          
                 placeholder="find your trips..."
               />
               <button className=" btn my-2 my-sm-0" type="submit">

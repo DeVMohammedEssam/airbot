@@ -7,7 +7,7 @@ const TripInfo = (props) => {
       <img className="TripInfo-img" src={props.imge} alt="..." />
        <div className="TripInfo-input">
        <h6>{props.infoHeader}</h6>
-      <input type={props.type} placeholder={props.placeholder}/>
+      <input onChange={props.onChange} type={props.type} placeholder={props.placeholder}/>
        </div>
     
       </div>

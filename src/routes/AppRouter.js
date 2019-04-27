@@ -7,6 +7,8 @@ import Trips from "../components/chatbot/Trips";
 import AddTripForm from "../components/reusable/AddTripForm";
 import EditTripForm from "../components/reusable/EditTripForm";
 import AddStaffForm from "../components/reusable/AddStaffForm";
+import Trip from "../components/Trip";
+
 import EditStaffForm from "../components/reusable/EditStaffForm";
 import { connect } from "react-redux";
 
@@ -22,6 +24,7 @@ const AppRouter = (props) => {
 
         <Route path="/chatbot" component={Chatbot} />
         <Route path="/trips" component={Trips} />
+        <Route path="/trip/:id" component={Trip} />
         <Route path="/DashBoard" component={DashBoard} />
         <Route path="/add-trip-form" component={AddTripForm} />
         <Route path="/edit-trip-form/:id" component={EditTripForm} />

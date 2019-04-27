@@ -3,9 +3,17 @@ import TripInfo from "../chatbot/subComponents/TripInfo";
 import TripDate from "../chatbot/subComponents/TripDate";
 import ChooseYourTrip from "./subComponents/ChooseYourTrip";
 import $ from "jquery";
+import axios from "axios"
 
 class Trips extends Component {
+     constructor(props){
+         super(props)
+     }
     state = {
+        trips:[],
+        to:"",
+        search:null,
+        from:"",
         spans: ['Flying from', 'Fling To', 'Travellers'],
         dateHeader: ['Departing', 'Returning'],
         infoHeaders: ['Flying from', 'Flying to', 'Traveller'],
@@ -13,7 +21,18 @@ class Trips extends Component {
         placeholders: ['City', '1'],
         images: ['imagesAndIcons/placeholder.png', 'imagesAndIcons/multiple-users-silhouette.png']
     }
+      onFromChange=(e)=>{
+          console.log(e.target.value)
+          this.setState({from:e.target.value})
+    }
+    onToChange=(e)=>{
+                  console.log(e.target.value)
+          this.setState({to:e.target.value})
+
+    }
     componentDidMount = () => {
+        console.log(this.props)
+         this.setState({search:this.props.location.search?this.props.location.search.split("=")[1]:null})
         $(".one-way").click(function () {
             $(this).addClass("active").siblings().removeClass("active");
         })
@@ -28,8 +47,12 @@ class Trips extends Component {
         })
 
         /* retrieving trips */
-
-
+axios.get("http://localhost:5000/api/trips").then((response)=>{
+    if(response.data.success){
+        this.setState({trips:response.data.trips})
+    }
+})
+  
     }
     render() {
 
@@ -45,6 +68,7 @@ class Trips extends Component {
                     </div>
                     <div className="flying">
                         <TripInfo
+                        onChange={this.onFromChange}
                             infoHeader={this.state.infoHeaders[0]}
                             type={this.state.types[0]}
                             placeholder={this.state.placeholders[0]}
@@ -52,6 +76,7 @@ class Trips extends Component {
                         />
 
                         <TripInfo
+                            onChange={this.onToChange}
                             infoHeader={this.state.infoHeaders[1]}
                             type={this.state.types[0]}
                             placeholder={this.state.placeholders[0]}
@@ -59,6 +84,7 @@ class Trips extends Component {
                         />
                     </div>
                     <div className="flying">
+                       {/*
                         <TripDate dateContent={this.state.dateHeader[0]} />
                         <TripDate dateContent={this.state.dateHeader[1]} />
                         <TripInfo
@@ -67,13 +93,19 @@ class Trips extends Component {
                             placeholder={this.state.placeholders[1]}
                             imge={this.state.images[1]}
                         />
+                       */}
 
                     </div>
-                    <select className="by-price">
+                   {
+                       /*
+ <select className="by-price">
                         <option>by price</option>
                         <option>ay 7aga</option>
                     </select>
-                    <button className="search-btn">Search</button>
+  <button className="search-btn">Search</button>
+                       */
+                   }
+                  
 
 
 
@@ -87,12 +119,12 @@ class Trips extends Component {
                     <div className="many-trips">
                         <img className="manyTrip-img" src="imagesAndIcons/tag.png" alt="..." />
                         <h4>Many trips with discount more than 50%
-                       <span className="show-all">Shaw all</span>
+                       <span className="show-all">show all</span>
                         </h4>
 
                     </div>
                 </div>
-                <ChooseYourTrip />
+                <ChooseYourTrip to={this.state.to} from={this.state.from} search={this.state.search} trips={this.state.trips} />
             </div>
 
         )
