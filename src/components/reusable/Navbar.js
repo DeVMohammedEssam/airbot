@@ -12,7 +12,7 @@ const Navbar = props => {
   return (<nav className="navbar navbar-expand-lg bg-orange">
     <div className="container">
       <Link to="/trips" className="navbar-brand" >
-        Navbar
+        AirBot
       </Link>
       <button
         className="navbar-toggler"
