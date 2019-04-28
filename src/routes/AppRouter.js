@@ -13,6 +13,7 @@ import EditStaffForm from "../components/reusable/EditStaffForm";
 import { connect } from "react-redux";
 import ProtectedRoute from "../components/reusable/ProtectedRoute";
 import PageNotFound from '../components/reusable/PageNotFound';
+import Reservation from "../components/chatbot/subComponents/Reservation";
 class AppRouter extends Component {
   state = {
     type: undefined
@@ -36,6 +37,7 @@ class AppRouter extends Component {
               <ProtectedRoute path="/edit-trip-form/:id" component={EditTripForm} />
               <ProtectedRoute path="/add-staff-form" component={AddStaffForm} />
               <ProtectedRoute path="/edit-staff-form/:id" component={EditStaffForm} />
+              <ProtectedRoute path="/reservations" component={Reservation} />
               <Route exact={true} path="/" component={Home} />
               <Route path="/chatbot" component={Chatbot} />
               <Route path="/price" component={Price} />
@@ -43,6 +45,7 @@ class AppRouter extends Component {
               <Route path="/trips" component={Trips} />
               <Route path="/trip/:id" component={Trip} />
               <Route component={PageNotFound} />
+
             </Switch>
           </React.Fragment>
         )
@@ -52,7 +55,7 @@ class AppRouter extends Component {
       return (
         <React.Fragment>
           <Switch>
-            <ProtectedRoute path="/dashboard" component={DashBoard} />
+            <ProtectedRoute path="/reservations" component={Reservation} />
             <Route exact={true} path="/" component={Home} />
             <Route path="/chatbot" component={Chatbot} />
             <Route path="/price" component={Price} />

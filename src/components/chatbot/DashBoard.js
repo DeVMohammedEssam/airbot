@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import OurTrips from "./subComponents/OurTrips";
 import Staff from "./subComponents/Staff";
 import Analysis from "./subComponents/Analysis";
-import Reservation from "./subComponents/Reservation";
 import Footer from "../reusable/Footer";
 
 import $ from "jquery";
@@ -65,7 +64,6 @@ class DashBoard extends Component {
                 <OurTrips />
                 <Staff />
                 <Analysis />
-                <Reservation />
             </div>
 
 

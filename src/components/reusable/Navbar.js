@@ -119,18 +119,22 @@ const Navbar = props => {
                 >
                   {props.loggedUser ? (
                     <div>
-                      <Link className="nav-link bg-info" to="/dashboard">
-                        my trips
+                      <Link className="nav-link bg-info" to="/reservations">
+                        Reservations
                       </Link>
 
                       {props.loggedUser.type === 1 && (/* show only if company */
-                        <Link
-                          className="nav-link bg-info"
-                          to="/dashboard"
-                        >
-                          Dashboard
+                        <React.Fragment>
+                          <Link
+                            className="nav-link bg-info"
+                            to="/dashboard"
+                          >
+                            Dashboard
                         </Link>
-
+                          <Link className="nav-link bg-info" to="/trips">
+                            my trips
+                        </Link>
+                        </React.Fragment>
                       )}
 
                       <button className="btn btn-sm btn-link  "

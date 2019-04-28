@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import axios from "axios"
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import axios from "axios";
+import { connect } from 'react-redux';
+import $ from "jquery";
 class Trip extends Component {
     constructor(props) {
         super(props)
@@ -43,7 +44,7 @@ class Trip extends Component {
     }
     reserve = () => {
         const id = this.props.match.params.id
-        axios.post("https://823fd3bd.ngrok.io/api/user/reservation/" + id, { data: { company_id: id } }).then((response) => {
+        axios.post("https://823fd3bd.ngrok.io/api/user/reservation/" + id, { data: { company_id: id , seat_no:$("#seat_number").val()} }).then((response) => {
             this.props.history.push("/dashboard")
         })
     }

@@ -3,13 +3,14 @@ import ReservationInfo from "./ReservationInfo";
 import Axios from 'axios';
 class Reservation extends Component {
     state = {
-        reservations: []
+        reservations: [],
+      
     }
     componentDidMount() {
-        /*               Axios.get("https://823fd3bd.ngrok.io/api/dashboard/reservations/").then(({ data }) => {
-                            this.setState(() => ({ reservations: [...data.reservations] }))
-                            console.log(data);
-                        })  */
+        Axios.get("https://823fd3bd.ngrok.io/api/dashboard/reservations/").then(({ data }) => {
+            this.setState(() => ({ reservations: [...data.trips]  }))
+            console.log(data);
+        })
     }
     render() {
         return (
@@ -19,15 +20,20 @@ class Reservation extends Component {
 
                     <ul className="Reservation-header list-unstyled">
                         <li>Name</li>
-                        <li>Country</li>
-                        <li>Phone</li>
                         <li>From</li>
                         <li>To</li>
                         <li>Seat No.</li>
                     </ul>
-                    {/*                     {this.state.reservations.map(rs => (
-                        <ReservationInfo name={} country={} phone={} from={} to={} seatNo={} />
-                    ))} */}
+                                {this.state.reservations.map((rs , i) => (
+                        <ReservationInfo
+                        key ={i}
+                        name={rs.trip.companyA.company_name}
+                        from={rs.trip.leaving_AirportA.city}
+                        to={rs.trip.arrival_AirportA.city}
+                        seatNo={rs.seat_no}
+                     
+                            />
+                    ))} 
 
                 </div>
             </div>
