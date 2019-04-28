@@ -7,8 +7,8 @@ class Staff extends Component {
         staff: []
     }
     componentDidMount() {
-        Axios.get("/staff/").then(({ data }) => {
-            this.setState(() => ({ staff: data }))
+        Axios.get("https://823fd3bd.ngrok.io/api/dashboard/staff/").then(({ data }) => {
+            this.setState(() => ({ staff: data.staff }))
         })
     }
     render() {
@@ -21,37 +21,15 @@ class Staff extends Component {
                                 <Link to="/add-staff-form">
                                     <h1>+</h1>
                                 </Link>
-
                             </div>
                         </div>
-                        <div className="col-lg-3"> <StaffMember /> </div>
-                        <div className="col-lg-3"> <StaffMember /></div>
-                        <div className="col-lg-3"> <StaffMember /> </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-3"> <StaffMember /> </div>
-                        <div className="col-lg-3"> <StaffMember /></div>
-                        <div className="col-lg-3"> <StaffMember /> </div>
-                        <div className="col-lg-3"> <StaffMember /> </div>
-
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-3"> <StaffMember /> </div>
-                        <div className="col-lg-3"> <StaffMember /></div>
-                        <div className="col-lg-3"> <StaffMember /> </div>
-                        <div className="col-lg-3"> <StaffMember /> </div>
-
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-3"> <StaffMember /> </div>
-                        <div className="col-lg-3"> <StaffMember /></div>
-                        <div className="col-lg-3"> <StaffMember /> </div>
-                        <div className="col-lg-3"> <StaffMember /> </div>
-
+                        {this.state.staff.map(st=>(
+                        <div className="col-lg-3">
+                            <StaffMember name={st.name} age={st.age} id={st.id}/>
+                        </div>
+                        ))}
                     </div>
                 </div>
-
-
             </div>
         );
     }

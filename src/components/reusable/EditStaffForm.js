@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 class EditStaffForm extends Component {
+    constructor(props){
+        super(props);
+    }
     state = {
         name: "",
         age: "",
@@ -12,22 +15,23 @@ class EditStaffForm extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        Axios.post(`/staff/edit/${this.props.match.params.id}`, { data: this.state }).then(({ data }) => {
-            if (data.success === true) {
-                this.props.history.push("/dashboard")
-            } else {
-                console.log("Edit staff error");
-            }
-        })
+           Axios.post(`https://823fd3bd.ngrok.io/api/dashboard/staff/edit/${this.props.match.params.id}`, { data: this.state }).then(({ data }) => {
+               if (data.success === true) {
+                   this.props.history.push("/dashboard")
+               } else {
+                   console.log("Edit staff error");
+               }
+           })
     }
     deleteMember = () => {
-        Axios.delete(`/staff/remove/${this.props.match.params.id}`).then(({ data }) => {
+        Axios.delete(`https://823fd3bd.ngrok.io/api/dashboard/staff/remove/${this.props.match.params.id}`).then(({ data }) => {
             data.success === true ? this.props.history.push("/dashboard") : console.log("can't delete mamber");
         })
     }
     componentDidMount() {
-        Axios.get(`/staff/edit/${this.props.match.params.id}`).then(({ data }) => {
-            this.setState(() => ({ ...data }));/* retrieve data from database */
+        console.log(this.props);
+         Axios.get(`https://823fd3bd.ngrok.io/api/dashboard/staff/${this.props.match.params.id}`).then(({ data }) => {
+           this.setState({name: data.staff.name , age:data.staff.age , gender:data.staff.gender});
         })
     }
     render() {

@@ -23,13 +23,14 @@ const innerLogin = (userData) => ({
         email: userData.email,
         gender: userData.gender,
         type: userData.type,
+        name: userData.name,
         id: userData.id
     }
 })
 export const login = () => {
     return (dispatch) => {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem("token");
-        axios.get("http://localhost:5000/api/user/").then(({ data }) => {
+        axios.get("https://823fd3bd.ngrok.io/api/user/").then(({ data }) => {
             console.log(data)
             dispatch(innerLogin(data.user));
 

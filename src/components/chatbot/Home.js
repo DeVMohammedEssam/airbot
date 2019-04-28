@@ -8,11 +8,17 @@ class Home extends Component {
     return (
       <div>
         <Header />
+<<<<<<< HEAD
         
           <ChooseYourWorld />
         <Footer />
+=======
+        <div className="container" />
+>>>>>>> 271b7d5f4f815e2eaa21868fdf31332f6b983530
       </div>
-    );
+    )
+
   }
 }
+
 export default Home;

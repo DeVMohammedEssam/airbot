@@ -6,14 +6,12 @@ import $ from "jquery";
 import axios from "axios"
 
 class Trips extends Component {
-     constructor(props){
-         super(props)
-     }
+
     state = {
-        trips:[],
-        to:"",
-        search:null,
-        from:"",
+        trips: [],
+        to: "",
+        search: null,
+        from: "",
         spans: ['Flying from', 'Fling To', 'Travellers'],
         dateHeader: ['Departing', 'Returning'],
         infoHeaders: ['Flying from', 'Flying to', 'Traveller'],
@@ -21,18 +19,18 @@ class Trips extends Component {
         placeholders: ['City', '1'],
         images: ['imagesAndIcons/placeholder.png', 'imagesAndIcons/multiple-users-silhouette.png']
     }
-      onFromChange=(e)=>{
-          console.log(e.target.value)
-          this.setState({from:e.target.value})
+    onFromChange = (e) => {
+        console.log(e.target.value)
+        this.setState({ from: e.target.value })
     }
-    onToChange=(e)=>{
-                  console.log(e.target.value)
-          this.setState({to:e.target.value})
+    onToChange = (e) => {
+        console.log(e.target.value)
+        this.setState({ to: e.target.value })
 
     }
     componentDidMount = () => {
         console.log(this.props)
-         this.setState({search:this.props.location.search?this.props.location.search.split("=")[1]:null})
+        /*    this.setState({ search: this.props.location.search ? this.props.location.search.split("=")[1] : null }) */
         $(".one-way").click(function () {
             $(this).addClass("active").siblings().removeClass("active");
         })
@@ -47,12 +45,12 @@ class Trips extends Component {
         })
 
         /* retrieving trips */
-axios.get("http://localhost:5000/api/trips").then((response)=>{
-    if(response.data.success){
-        this.setState({trips:response.data.trips})
-    }
-})
-  
+        axios.get("https://823fd3bd.ngrok.io/api/trips").then((response) => {
+            if (response.data.success) {
+                this.setState({ trips: response.data.trips })
+            }
+        })
+
     }
     render() {
 
@@ -68,7 +66,7 @@ axios.get("http://localhost:5000/api/trips").then((response)=>{
                     </div>
                     <div className="flying">
                         <TripInfo
-                        onChange={this.onFromChange}
+                            onChange={this.onFromChange}
                             infoHeader={this.state.infoHeaders[0]}
                             type={this.state.types[0]}
                             placeholder={this.state.placeholders[0]}
@@ -84,7 +82,7 @@ axios.get("http://localhost:5000/api/trips").then((response)=>{
                         />
                     </div>
                     <div className="flying">
-                       {/*
+                        {/*
                         <TripDate dateContent={this.state.dateHeader[0]} />
                         <TripDate dateContent={this.state.dateHeader[1]} />
                         <TripInfo
@@ -96,16 +94,16 @@ axios.get("http://localhost:5000/api/trips").then((response)=>{
                        */}
 
                     </div>
-                   {
-                       /*
- <select className="by-price">
-                        <option>by price</option>
-                        <option>ay 7aga</option>
-                    </select>
-  <button className="search-btn">Search</button>
-                       */
-                   }
-                  
+                    {
+                        /*
+  <select className="by-price">
+                         <option>by price</option>
+                         <option>ay 7aga</option>
+                     </select>
+   <button className="search-btn">Search</button>
+                        */
+                    }
+
 
 
 
