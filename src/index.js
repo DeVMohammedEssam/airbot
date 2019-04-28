@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { login } from "./redux/actions/user";
 //bootstrap js dependencies
 import "bootstrap/dist/js/bootstrap.bundle";
+
 /*styles importing */
 import "./style/style.scss";
 import App from "./App";

@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
     constructor(props){
         super(props)
         this.state={
+            type:0,
             trip:{
                 arrival_AirportA:{},
                 leaving_AirportA:{},
@@ -14,11 +15,42 @@ import {connect} from 'react-redux'
             }
         }
     }
+    static getDerivedStateFromProps(nextProps, prevState){
+    console.log(nextProps)
+    if(nextProps.user)
+   if(nextProps.user!==prevState.user){
+     return { type: nextProps.user.type};
+  }
+  else return null;
+}
     componentDidMount=()=>{
         const id=this.props.match.params.id
         console.log("ID ",id)
         axios.get("https://823fd3bd.ngrok.io/api/trip/"+id).then((response)=>{
             this.setState({trip:response.data.trip});
+        })
+    }
+    edit=()=>{
+         const id=this.props.match.params.id
+                     this.props.history.push("/edit-trip-form/"+id)
+
+    }
+    delete=()=>{
+         const id=this.props.match.params.id
+        axios.delete("https://823fd3bd.ngrok.io/api/user/reservation/"+id).then((response)=>{
+            this.props.history.push("/dashboard")
+        })
+    }
+    reserve=()=>{
+           const id=this.props.match.params.id
+   axios.post("https://823fd3bd.ngrok.io/api/user/reservation/"+id).then((response)=>{
+            this.props.history.push("/")
+        })
+    }
+    addToFav=()=>{
+            const id=this.props.match.params.id
+   axios.post("https://823fd3bd.ngrok.io/api/user/fav-list/"+id).then((response)=>{
+            this.props.history.push("/")
         })
     }
   render() {
@@ -102,12 +134,25 @@ import {connect} from 'react-redux'
                             <div className="trip__content__item__btns">
                                {this.props.user?
                             <React.Fragment>
-                                <button className="trip__content__item__btn btn btn-primary">
+                                {this.state.type?
+                                   <React.Fragment>
+                                  <button onClick={this.edit} className="trip__content__item__btn btn btn-success">
+                                 Edit
+                             </button>
+                                 <button onClick={this.delete} className="trip__content__item__btn btn btn-danger">
+                                Delete 
+                             </button>
+                             </React.Fragment>:
+<React.Fragment>
+      <button className="trip__content__item__btn btn btn-primary"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve">
                                  Reserve it
                              </button>
-                                 <button className="trip__content__item__btn btn btn-danger">
+                                 <button onClick={this.addToFav} className="trip__content__item__btn btn btn-danger">
                                 Add to favorite 
                              </button>
+</React.Fragment>
+                                }
+                              
                             </React.Fragment>
                         :"you must login"}
                             </div>
@@ -118,6 +163,26 @@ import {connect} from 'react-redux'
             :"loading..."}
          
         </div>
+
+
+        <div class="modal fade" id="reserve" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div class="form-group">
+
+    <input type="text" class="form-control" id="seat_number" aria-describedby="emailHelp" placeholder="seat number" />
+    <small id="emailHelp" class="form-text text-muted">we'll check this seat and reservation within short time</small>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button onClick={this.reserve} type="button" class="btn btn-primary">Reserve Now</button>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
     )
   }
