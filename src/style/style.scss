@@ -35,7 +35,7 @@ body {
 @import "./components/chatbot/ChooseYourTrip";
 @import "./components/chatbot/Catalonia";
 
-//Broacast imports
+//Dashboard imports
 @import "./components/chatbot/DashBoard";
 @import "./components/chatbot/OurTrips";
 @import "./components/chatbot/Staff";
@@ -45,6 +45,9 @@ body {
 @import "./components/chatbot/Reservation";
 @import "./components/chatbot/ReservationInfo";
 @import "./components/Trip";
+
+//price
+@import "./components/chatbot/Price";
 
 //bootstrap imports
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

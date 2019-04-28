@@ -2,6 +2,8 @@ import React from "react";
 import Chatbot from "../components/chatbot/Chatbot";
 import Home from "../components/chatbot/Home";
 import DashBoard from "../components/chatbot/DashBoard";
+import Price from "../components/chatbot/Price";
+
 import { Route, Switch, Redirect } from "react-router-dom";
 import Trips from "../components/chatbot/Trips";
 import AddTripForm from "../components/reusable/AddTripForm";
@@ -26,6 +28,8 @@ const AppRouter = (props) => {
         <Route path="/trips" component={Trips} />
         <Route path="/trip/:id" component={Trip} />
         <Route path="/DashBoard" component={DashBoard} />
+        <Route path="/Price" component={Price} />
+
         <Route path="/add-trip-form" component={AddTripForm} />
         <Route path="/edit-trip-form/:id" component={EditTripForm} />
         <Route path="/add-staff-form" component={AddStaffForm} />

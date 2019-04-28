@@ -12,8 +12,8 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          {/*           {this.props.error && (<div className="alert alert-danger flash-message">this.props.error</div>)}
- */}          <LoginModal />
+          {/*{this.props.error && (<div className="alert alert-danger flash-message">this.props.error</div>)} */}          
+          <LoginModal />
           <AppRouter />
         </div>
       </BrowserRouter>

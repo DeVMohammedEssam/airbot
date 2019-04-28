@@ -31,7 +31,7 @@ class ChooseYourTrip extends Component {
                             <div className="choose-your-trip-flyNow row  mb-3">
                                 {tripFilter(this.props.trips,this.props.from,this.props.to,this.props.search).map((trip)=>(
                                     
- <div className="col-3">
+                                 <div className="col-3">
                                     <Catalonia id={trip.id} desc={trip.desc} arrival_Airport={trip.arrival_AirportA.name} amount={trip.amount+"$"} image={trip.image} />
                                 </div>
                                 ))}
