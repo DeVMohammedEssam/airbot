@@ -11,7 +11,7 @@ const Navbar = props => {
   console.log(props);
   return (<nav className="navbar navbar-expand-lg bg-orange">
     <div className="container">
-      <Link to="/trips" className="navbar-brand" >
+      <Link to="/" className="navbar-brand" >
         AirBot
       </Link>
       <button
@@ -27,7 +27,7 @@ const Navbar = props => {
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto w-100">
-          {!props.loggedUser && ( //show only when not logged in
+       
             <li className="nav-item">
               <NavLink
                 className="nav-link"
@@ -38,7 +38,7 @@ const Navbar = props => {
                 Home
               </NavLink>
             </li>
-          )}
+      
           <li className="nav-item">
             <NavLink
               className="nav-link"
