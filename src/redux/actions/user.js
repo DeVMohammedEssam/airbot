@@ -30,7 +30,7 @@ const innerLogin = (userData) => ({
 export const login = () => {
     return (dispatch) => {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem("token");
-        axios.get("https://823fd3bd.ngrok.io/api/user/").then(({ data }) => {
+        axios.get("/api/user/").then(({ data }) => {
             console.log(data)
             dispatch(innerLogin(data.user));
 

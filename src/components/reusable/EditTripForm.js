@@ -18,7 +18,8 @@ class EditTripForm extends Component {
         staffLeader: "",
         airports: [],
         airplanes: [],
-        staff: []
+        staff: [],
+        description:""
 
     }
     handleInputChange = (e) => {
@@ -39,14 +40,15 @@ class EditTripForm extends Component {
             final_Amount: this.state.finalAmount,
             plane_id: this.state.plane,
             image: this.state.imageFileReader,
+            desc:this.state.description
         }
         const { id } = this.props.match.params;
-        axios.post(`https://823fd3bd.ngrok.io/api/dashboard/trip/${id}`, { data: modifiedTrip }).then(({ data }) => {
+        axios.post(`/api/dashboard/trip/${id}`, { data: modifiedTrip }).then(({ data }) => {
             this.props.history.push("/dashboard");
         });
     }
     deleteTrip = (e) => {
-        axios.delete(`https://823fd3bd.ngrok.io/api/dashboard/trip/${this.props.match.params.id}`).then(() => {
+        axios.delete(`/api/dashboard/trip/${this.props.match.params.id}`).then(() => {
             this.props.history.push("/trips");
         })
     }
@@ -63,21 +65,21 @@ class EditTripForm extends Component {
     }
     componentDidMount() {
 
-        axios.get("https://823fd3bd.ngrok.io/api/airports").then(({ data }) => {
+        axios.get("/api/airports").then(({ data }) => {
             this.setState(() => ({ airports: [...data.airports] }))
 
         })
-        axios.get("https://823fd3bd.ngrok.io/api/airplanes").then(({ data }) => {
+        axios.get("/api/airplanes").then(({ data }) => {
             this.setState(() => ({ airplanes: [...data.airplanes] }))
 
         })
 
-        axios.get("https://823fd3bd.ngrok.io/api/dashboard/staff/").then(({ data }) => {
+        axios.get("/api/dashboard/staff/").then(({ data }) => {
             this.setState(() => ({ staff: data.staff }));
 
         })
         //will retrieve trip 
-        axios.get(`https://823fd3bd.ngrok.io/api/trip/${this.props.match.params.id}`).then(({ data }) => {
+        axios.get(`/api/trip/${this.props.match.params.id}`).then(({ data }) => {
             this.setState(() => ({
                 arrivalTime: this.formatDate(data.trip.arrival_Airport),
                 leavingTime: this.formatDate(data.trip.leaving_Time),
@@ -89,7 +91,8 @@ class EditTripForm extends Component {
                 discount: data.trip.discount,
                 finalAmount: data.trip.final_Amount,
                 planId: data.trip.planeA.id,
-                imageFileReader: data.trip.image
+                imageFileReader: data.trip.image,
+                description:data.trip.desc
 
             }))
         })
@@ -227,7 +230,7 @@ class EditTripForm extends Component {
                                         type="number"
                                     />
                                 </div>
-                                <div className="form-group  col-12 ">
+                                <div className="form-group  col-6 ">
                                     <label >Plan Id</label>
                                     <input
                                         required
@@ -242,6 +245,18 @@ class EditTripForm extends Component {
                                             ))
                                         }
                                     </datalist>
+                                </div>
+                                 <div className="form-group  col-6 ">
+                                    <label >description</label>
+                                    <input
+                                        required
+                                        onChange={this.handleInputChange}
+                                        value={this.state.description}
+                                        className="form-control"
+                                        placeholder="description.."
+                                        name="description"
+                                        type="text"
+                                    />
                                 </div>
 
                             </div>

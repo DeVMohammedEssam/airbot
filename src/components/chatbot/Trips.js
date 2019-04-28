@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TripInfo from "../chatbot/subComponents/TripInfo";
 import TripDate from "../chatbot/subComponents/TripDate";
 import ChooseYourTrip from "./subComponents/ChooseYourTrip";
+import Footer from "../reusable/Footer"
 import $ from "jquery";
 import axios from "axios"
 
@@ -30,7 +31,7 @@ class Trips extends Component {
     }
     componentDidMount = () => {
         console.log(this.props)
-        /*    this.setState({ search: this.props.location.search ? this.props.location.search.split("=")[1] : null }) */
+         this.setState({ search: this.props.location.search ? this.props.location.search.split("=")[1] : null }) 
         $(".one-way").click(function () {
             $(this).addClass("active").siblings().removeClass("active");
         })
@@ -45,7 +46,7 @@ class Trips extends Component {
         })
 
         /* retrieving trips */
-        axios.get("https://823fd3bd.ngrok.io/api/trips").then((response) => {
+        axios.get("/api/trips").then((response) => {
             if (response.data.success) {
                 this.setState({ trips: response.data.trips })
             }
@@ -123,6 +124,7 @@ class Trips extends Component {
                     </div>
                 </div>
                 <ChooseYourTrip to={this.state.to} from={this.state.from} search={this.state.search} trips={this.state.trips} />
+                <Footer />
             </div>
 
         )

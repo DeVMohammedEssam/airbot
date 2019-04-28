@@ -11,7 +11,7 @@ class LoginModal extends Component {
     }
     handleModalSubmit = (e) => {
         e.preventDefault();
-        Axios.post("https://823fd3bd.ngrok.io/api/user/login", { data: { ...this.state } }).then(({ data }) => {
+        Axios.post("/api/user/login", { data: { ...this.state } }).then(({ data }) => {
             console.log(this.state);
 
             if (data.success === true) {

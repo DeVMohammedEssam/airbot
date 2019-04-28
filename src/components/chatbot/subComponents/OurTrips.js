@@ -7,7 +7,7 @@ class OurTrips extends Component {
         trips: []
     }
     componentDidMount() {
-        Axios.get("https://823fd3bd.ngrok.io/api/dashboard/trips").then(({ data }) => {
+        Axios.get("/api/dashboard/trips").then(({ data }) => {
             this.setState(() => ({ trips: [...data.trips] }))
 
         })
@@ -29,7 +29,7 @@ class OurTrips extends Component {
                         {this.state.trips.map((trip) => (
 
                             <div className="col-3">
-                                <Catalonia id={trip.id} desc={trip.desc} arrival_Airport={trip.arrival_AirportA.name} amount={trip.amount + "$"} image={trip.image} />
+                                <Catalonia id={trip.id} desc={trip.desc} arrival_Airport={trip.arrival_AirportA.city} amount={trip.amount + "$"} image={trip.image} />
                             </div>
                         ))}
 

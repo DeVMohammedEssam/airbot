@@ -1,11 +1,11 @@
 import React from "react";
 
-const Icon = () => {
+const Icon = (props) => {
     return (
-          <div className="Icon">
-          <h1>Icon</h1>
-          <h3>Trips</h3>
-          <h2>10,352</h2>   
+          <div className="Icon text-center">
+          <h3><i className={props.icon}></i></h3>
+          <h5>{props.title}</h5>
+          <p>{props.number} </p>
           </div>
            
        

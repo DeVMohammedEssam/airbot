@@ -15,7 +15,7 @@ class EditStaffForm extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-           Axios.post(`https://823fd3bd.ngrok.io/api/dashboard/staff/edit/${this.props.match.params.id}`, { data: this.state }).then(({ data }) => {
+           Axios.post(`/api/dashboard/staff/edit/${this.props.match.params.id}`, { data: this.state }).then(({ data }) => {
                if (data.success === true) {
                    this.props.history.push("/dashboard")
                } else {
@@ -24,13 +24,13 @@ class EditStaffForm extends Component {
            })
     }
     deleteMember = () => {
-        Axios.delete(`https://823fd3bd.ngrok.io/api/dashboard/staff/remove/${this.props.match.params.id}`).then(({ data }) => {
+        Axios.delete(`/api/dashboard/staff/remove/${this.props.match.params.id}`).then(({ data }) => {
             data.success === true ? this.props.history.push("/dashboard") : console.log("can't delete mamber");
         })
     }
     componentDidMount() {
         console.log(this.props);
-         Axios.get(`https://823fd3bd.ngrok.io/api/dashboard/staff/${this.props.match.params.id}`).then(({ data }) => {
+         Axios.get(`/api/dashboard/staff/${this.props.match.params.id}`).then(({ data }) => {
            this.setState({name: data.staff.name , age:data.staff.age , gender:data.staff.gender});
         })
     }

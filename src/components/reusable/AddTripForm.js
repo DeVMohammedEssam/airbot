@@ -19,7 +19,8 @@ class AddTripForm extends Component {
         staffLeader: "",
         airports: [],
         airplanes: [],
-        staff: []
+        staff: [],
+        description:""
     }
     handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -51,9 +52,10 @@ class AddTripForm extends Component {
             final_Amount: this.state.finalAmount,
             plane_id: this.state.plane,
             image: this.state.imageFileReader,
+            desc:this.state.description
 
         }
-        axios.post("https://823fd3bd.ngrok.io/api/dashboard/trip/", { data: { ...modifiedTrip } }).then(({ data }) => {
+        axios.post("/api/dashboard/trip/", { data: { ...modifiedTrip } }).then(({ data }) => {
             if (data.success) {
                 this.props.history.push("/dashboard");
             } else {
@@ -62,16 +64,16 @@ class AddTripForm extends Component {
         })
     }
     componentDidMount() {
-        axios.get("https://823fd3bd.ngrok.io/api/airports").then(({ data }) => {
+        axios.get("/api/airports").then(({ data }) => {
             this.setState(() => ({ airports: [...data.airports] }))
 
         })
-        axios.get("https://823fd3bd.ngrok.io/api/airplanes").then(({ data }) => {
+        axios.get("/api/airplanes").then(({ data }) => {
             this.setState(() => ({ airplanes: [...data.airplanes] }))
 
         })
 
-        axios.get("https://823fd3bd.ngrok.io/api/dashboard/staff/").then(({ data }) => {
+        axios.get("/api/dashboard/staff/").then(({ data }) => {
             this.setState(() => ({ staff: data.staff }));
 
         })
@@ -209,7 +211,7 @@ class AddTripForm extends Component {
                                         type="number"
                                     />
                                 </div>
-                                <div className="form-group  col-12 ">
+                                <div className="form-group  col-6 ">
                                     <label >Plan Id</label>
                                     <input
                                         required
@@ -225,6 +227,18 @@ class AddTripForm extends Component {
                                             ))
                                         }
                                     </datalist>
+                                </div>
+                                    <div className="form-group  col-6 ">
+                                    <label >description</label>
+                                    <input
+                                        required
+                                        onChange={this.handleInputChange}
+                                        value={this.state.description}
+                                        className="form-control"
+                                        placeholder="description.."
+                                        name="description"
+                                        type="text"
+                                    />
                                 </div>
 
                             </div>

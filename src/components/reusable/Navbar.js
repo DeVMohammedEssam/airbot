@@ -60,13 +60,7 @@ const Navbar = props => {
               </NavLink>
           </li>
           <li className="nav-item ">
-            <NavLink
-              activeClassName="active"
-              className="nav-link"
-              to="/about"
-            >
-              About
-              </NavLink>
+          
           </li>
           <li className="nav-item">
             <NavLink
@@ -119,6 +113,7 @@ const Navbar = props => {
                 >
                   {props.loggedUser ? (
                     <div>
+                      
                       <Link className="nav-link bg-info" to="/reservations">
                         Reservations
                       </Link>
@@ -131,9 +126,11 @@ const Navbar = props => {
                           >
                             Dashboard
                         </Link>
-                          <Link className="nav-link bg-info" to="/trips">
+                        {
+/*   <Link className="nav-link bg-info" to="/trips">
                             my trips
-                        </Link>
+                        </Link> */
+                        }
                         </React.Fragment>
                       )}
 
@@ -162,7 +159,7 @@ const Navbar = props => {
           {props.loggedUser && (
             <li className="nav-item d-flex align-items-center">
               <span className="text-light font-weight-bold">
-                Signed in as: {props.loggedUser.name}
+                Signed in as: {props.loggedUser.name?props.loggedUser.name:"Company"}
               </span>
 
             </li>

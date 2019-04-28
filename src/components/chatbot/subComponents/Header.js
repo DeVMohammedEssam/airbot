@@ -141,7 +141,7 @@ class Header extends Component {
         ? ({ ...traveller, type: userType })
         : ({ ...modifiedCompany, type: userType });
 
-      axios.post("https://823fd3bd.ngrok.io/api/user/", { data }).then(({ data }) => {
+      axios.post("/api/user/", { data }).then(({ data }) => {
         $("button.close").click();
         getFirstSlide();
       })

@@ -13,7 +13,7 @@ class AddStaffForm extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        Axios.post("https://823fd3bd.ngrok.io/api/dashboard/staff/add", { data: this.state }).then(({ data }) => {
+        Axios.post("/api/dashboard/staff/add", { data: this.state }).then(({ data }) => {
             if (data.success === true) {
                 this.props.history.push("/dashboard")
             } else {

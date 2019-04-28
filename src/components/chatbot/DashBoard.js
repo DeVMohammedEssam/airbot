@@ -55,7 +55,10 @@ class DashBoard extends Component {
                     <ul className="DashBoard-nav list-unstyled">
                         <li className="OurTrips-click active">Trips</li>
                         <li className="Staff-click"> Staff</li>
-                        <li className="Reservation-click">Reservation</li>
+                   {/*
+<li className="Reservation-click">Reservation</li>
+
+                   */}     
                         <li className="Analysis-click">Analysis</li>
 
                     </ul>

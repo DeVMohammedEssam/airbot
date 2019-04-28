@@ -27,7 +27,7 @@ class Trip extends Component {
     componentDidMount = () => {
         const id = this.props.match.params.id
         console.log("ID ", id)
-        axios.get("https://823fd3bd.ngrok.io/api/trip/" + id).then((response) => {
+        axios.get("/api/trip/" + id).then((response) => {
             this.setState({ trip: response.data.trip });
         })
     }
@@ -38,19 +38,19 @@ class Trip extends Component {
     }
     delete = () => {
         const id = this.props.match.params.id
-        axios.delete("https://823fd3bd.ngrok.io/api/user/reservation/" + id).then((response) => {
+        axios.delete("/api/user/reservation/" + id).then((response) => {
             this.props.history.push("/dashboard")
         })
     }
     reserve = () => {
         const id = this.props.match.params.id
-        axios.post("https://823fd3bd.ngrok.io/api/user/reservation/" + id, { data: { company_id: id , seat_no:$("#seat_number").val()} }).then((response) => {
-            this.props.history.push("/dashboard")
+        axios.post("/api/user/reservation/" + id, { data: { company_id: id , seat_no:$("#seat_number").val()} }).then((response) => {
+            this.props.history.push("/reservations")
         })
     }
     addToFav = () => {
         const id = this.props.match.params.id
-        axios.post("https://823fd3bd.ngrok.io/api/user/fav-list/" + id).then((response) => {
+        axios.post("/api/user/fav-list/" + id).then((response) => {
             this.props.history.push("/")
         })
     }
@@ -95,8 +95,8 @@ class Trip extends Component {
                             </h5>
                                         <hr />
                                         <div className="trip__content__item__info">
-                                            <p>From : {trip.leaving_AirportA.country}</p>
-                                            <p>To :  {trip.arrival_AirportA.country}</p>
+                                            <p>From : {trip.leaving_AirportA.city}</p>
+                                            <p>To :  {trip.arrival_AirportA.city}</p>
                                             <p>available Seats : {trip.seats_numer}</p>
                                             <p>description : {trip.desc}</p>
 

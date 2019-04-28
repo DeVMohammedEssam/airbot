@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import ReservationInfo from "./ReservationInfo";
 import Axios from 'axios';
+import {connect} from "react-redux"
 class Reservation extends Component {
     state = {
         reservations: [],
       
     }
     componentDidMount() {
-        Axios.get("https://823fd3bd.ngrok.io/api/dashboard/reservations/").then(({ data }) => {
+        Axios.get("/api/dashboard/reservations/").then(({ data }) => {
             this.setState(() => ({ reservations: [...data.trips]  }))
             console.log(data);
         })
@@ -20,6 +21,8 @@ class Reservation extends Component {
 
                     <ul className="Reservation-header list-unstyled">
                         <li>Name</li>
+                        {this.props.user?!this.props.user.name? <li>Phone</li>:"":""}
+                       
                         <li>From</li>
                         <li>To</li>
                         <li>Seat No.</li>
@@ -27,8 +30,12 @@ class Reservation extends Component {
                                 {this.state.reservations.map((rs , i) => (
                         <ReservationInfo
                         key ={i}
+                        company={this.props.user?!this.props.user.name?true:false:false}
                         name={rs.trip.companyA.company_name}
+                        userName={rs.user.name}
+                        phone={rs.user.phone}
                         from={rs.trip.leaving_AirportA.city}
+                        
                         to={rs.trip.arrival_AirportA.city}
                         seatNo={rs.seat_no}
                      
@@ -43,5 +50,7 @@ class Reservation extends Component {
 }
 
 
-
-export default Reservation;
+const mapStateToProps=(state)=>({
+    user:state.user?state.user.loggedUser:null
+})
+export default connect(mapStateToProps)(Reservation);
