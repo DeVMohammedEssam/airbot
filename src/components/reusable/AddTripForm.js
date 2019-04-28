@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ImageFileReader from "./ImageFileReader";
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 import $ from "jquery";
 class AddTripForm extends Component {
@@ -111,6 +111,7 @@ class AddTripForm extends Component {
                                         onChange={this.handleInputChange}
                                         value={this.state.leavingAirport}
                                         className="form-control"
+                                        autoComplete="off"
                                         placeholder="Leaving Airport.."
                                         name="leavingAirport"
                                         list="airports" />
@@ -151,6 +152,7 @@ class AddTripForm extends Component {
                                         value={this.state.staffLeader}
                                         className="form-control"
                                         placeholder="staff leader.."
+                                        autoComplete="off"
                                         name="staffLeader"
                                         list="staff" />
                                     <datalist id="staff">
@@ -214,6 +216,7 @@ class AddTripForm extends Component {
                                         value={this.state.plane}
                                         onChange={this.handleInputChange}
                                         className="form-control"
+                                        autoComplete="off"
                                         placeholder="Plan ID.." name="plane" list="plans" />
                                     <datalist id="plans">
                                         {

@@ -6,9 +6,10 @@ class Reservation extends Component {
         reservations: []
     }
     componentDidMount() {
-        Axios.get("/reservations/").then(({ data }) => {
-            this.setState(() => ({ reservations: data }))
-        })
+        /*               Axios.get("https://823fd3bd.ngrok.io/api/dashboard/reservations/").then(({ data }) => {
+                            this.setState(() => ({ reservations: [...data.reservations] }))
+                            console.log(data);
+                        })  */
     }
     render() {
         return (
@@ -24,10 +25,10 @@ class Reservation extends Component {
                         <li>To</li>
                         <li>Seat No.</li>
                     </ul>
-                    <ReservationInfo />
-                    <ReservationInfo />
-                    <ReservationInfo />
-                    <ReservationInfo />
+                    {/*                     {this.state.reservations.map(rs => (
+                        <ReservationInfo name={} country={} phone={} from={} to={} seatNo={} />
+                    ))} */}
+
                 </div>
             </div>
 

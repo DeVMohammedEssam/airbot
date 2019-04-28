@@ -8,7 +8,7 @@ const onSearch = (e) => {
   window.location.href = "/trips?search=" + $("#search").val()
 }
 const Navbar = props => {
-
+  console.log(props);
   return (<nav className="navbar navbar-expand-lg bg-orange">
     <div className="container">
       <Link to="/trips" className="navbar-brand" >

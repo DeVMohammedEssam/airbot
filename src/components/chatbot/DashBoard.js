@@ -51,26 +51,25 @@ class DashBoard extends Component {
 
         return (
             <div className="DashBoard">
-               
-                  <div className="DashBoard-Header">
-                  <ul className="DashBoard-nav list-unstyled">
+
+                <div className="DashBoard-Header">
+                    <ul className="DashBoard-nav list-unstyled">
                         <li className="OurTrips-click active">Trips</li>
                         <li className="Staff-click"> Staff</li>
                         <li className="Reservation-click">Reservation</li>
                         <li className="Analysis-click">Analysis</li>
-                        
+
                     </ul>
                     <span className="slider"></span>
-                  </div>
-                    <OurTrips />
-                    <Staff />
-                    <Analysis />
-                    <Reservation />
-                    <Footer />
                 </div>
+                <OurTrips />
+                <Staff />
+                <Analysis />
+                <Reservation />
+            </div>
 
 
-          
+
 
         )
     }

@@ -1,86 +1,99 @@
-.Price{
-    background-color: white;
-   padding-top: 50px;
-    .Price-header{
-        color:gray;
+.Price {
+    background-color: #efefef;
+    padding-top: 50px;
+
+    .Price-header {
+        color: gray;
         text-align: center;
-        
-        h1{
+
+        h1 {
             margin-bottom: 20px;
         }
     }
-    .free{
-        border:0.5px solid rgb(201, 199, 199);
+
+    .free {
+        border: 0.5px solid rgb(201, 199, 199);
         height: 90%;
-        width:80%;
+        width: 80%;
         margin-top: 50px;
         margin-left: 10%;
         border-radius: 20px;
         padding: 20px 0 30px 0;
-        display:flex;
+        display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
+
         @media (max-width: 991.98px) {
             margin-bottom: 30px;
-          }
-        p{
+        }
+
+        p {
             font-size: 15px;
             color: grey;
             margin-left: 25%;
             width: 50%;
         }
-        span{
-           display: inline-block;
-           margin-top: 30px; 
-           color:gray;
-           margin-left: 15%;
+
+        span {
+            display: inline-block;
+            margin-top: 30px;
+            color: gray;
+            margin-left: 15%;
         }
 
     }
-    .pro-plan{
-        border:0.5px solid rgb(201, 199, 199);
-        
-        width:80%;
+
+    .pro-plan {
+        border: 0.5px solid rgb(201, 199, 199);
+
+        width: 80%;
         margin-top: 50px;
         margin-left: 10%;
         border-radius: 20px;
         padding: 20px 0 30px 0;
-        display:flex;
+        display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
+
         @media (max-width: 991.98px) {
             margin-bottom: 30px;
-          }
-        p{
+        }
+
+        p {
             font-size: 15px;
             color: grey;
             margin-left: 25%;
             width: 60%;
         }
-        span{
-           display: inline-block;
-           margin-top: 20px; 
-           color:gray;
-           margin-left: 15%;
+
+        span {
+            display: inline-block;
+            margin-top: 20px;
+            color: gray;
+            margin-left: 15%;
         }
-        button{
-            width:60%;
+
+        button {
+            width: 60%;
             margin-left: 20%;
             margin-top: 25px;
             border-radius: 50px;
             font-size: 16px;
         }
     }
-    .FAQ{
+
+    .FAQ {
         width: 80%;
-       margin-left: 10%;
-        h4{
+        margin-left: 10%;
+
+        h4 {
             margin-top: 55px;
         }
-        h6{
-            color:gray;
+
+        h6 {
+            color: gray;
             margin-top: 40px;
-            width:80%;
+            width: 80%;
         }
     }
 }
