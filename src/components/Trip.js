@@ -17,12 +17,12 @@ import {connect} from 'react-redux'
     componentDidMount=()=>{
         const id=this.props.match.params.id
         console.log("ID ",id)
-        axios.get("http://localhost:5000/api/trip/"+id).then((response)=>{
+        axios.get("https://823fd3bd.ngrok.io/api/trip/"+id).then((response)=>{
             this.setState({trip:response.data.trip});
         })
     }
   render() {
-      let trip=this.state.trip;
+      let trip= this.state.trip;
 
     return (
        

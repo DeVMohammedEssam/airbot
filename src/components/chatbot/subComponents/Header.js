@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { connect } from "react-redux";
+import { setError } from "../../../redux/actions/errors";
 import Modal from "../../reusable/Modal";
 import {
   connectedContent as SignupTravellerContent,
@@ -106,26 +107,43 @@ class Header extends Component {
     next.removeClass("active");
     prev.removeClass("active");
     const { traveller, company, userType } = this.props.user;
-    let passwordError = "";
+    let err = false;
     if (userType === "0") {
-      if (traveller.password !== traveller.confirm_password) {
-        passwordError = "password doesn't match cofirmation";
+      if (traveller.password !== traveller.confirmPassword) {
+        this.props.dispatch(setError("passwordConfirmError", true));
+        err = true;
       }
     }
     if (userType === "1") {
-      if (company.password !== company.confirm_password) {
-        passwordError = "password doesn't match cofirmation";
+      if (company.password !== company.companyPasswordConfirmation) {
+        this.props.dispatch(setError("passwordConfirmError", true));
+        err = true;
       }
     }
-    if (passwordError) {
+    if (err) {
       getFirstSlide();
+      return;
     } else {
+      const modifiedCompany = {
+        facebook_url: company.facebookLink,
+        twitter_url: company.LinkedInLink,
+        linkidin_url: company.twitterLink,
+        address: company.address,
+        describtion: company.describtion,
+        logo_url: company.imageFileReader,
+        establishment_date: company.establishment_date,
+        company_name: company.companyName,
+        email: company.companyEmail,
+        password: company.password
+
+      }
       const data = userType === "0"
         ? ({ ...traveller, type: userType })
-        : ({ ...company, type: userType });
-     
-      axios.post("http://localhost:5000/api/user/", {data }).then(({ data }) => {
+        : ({ ...modifiedCompany, type: userType });
+
+      axios.post("https://823fd3bd.ngrok.io/api/user/", { data }).then(({ data }) => {
         $("button.close").click();
+        getFirstSlide();
       })
 
     }
@@ -179,41 +197,46 @@ class Header extends Component {
           <br /> change. Additional terms apply.
         </p>
 
-          <p className="my-5 ">Now you can register with us as</p>
-          <div className="header__btns-container">
-            <a
-              className="btn--orange btn-navbar--custom px-5 py-2 mr-4"
-              href="#travellerModal"
-              data-toggle="modal"
-              role="button"
-            >
-              <span>Trveller </span>
-              <img href="" alt="" />
-            </a>
-            <a
-              className="btn--lightBlue btn-navbar--custom px-5 py-2 btn-hasIcon "
-              href="#companyModal"
-              data-toggle="modal"
-              role="button"
-            >
-              <img
-                className="btn__icon icon-left"
-                src="/imagesAndIcons/companyLogo.png"
-                alt=""
-              />
-              <span>Company</span>
-            </a>
-            <div className="header__icons-container mt-5">
-              <img src="/imagesAndIcons/messenger-1.png" alt="" />
-              <img src="/imagesAndIcons/movie-tickets.png" alt="" />
-              <img src="/imagesAndIcons/secure.png" alt="" />
-            </div>
-          </div>
+          {!localStorage.getItem("token") && (
+            <React.Fragment>
+              <p className="my-5 ">Now you can register with us as</p>
+              <div className="header__btns-container">
+                <a
+                  className="btn--orange btn-navbar--custom px-5 py-2 mr-4"
+                  href="#travellerModal"
+                  data-toggle="modal"
+                  role="button"
+                >
+                  <span>Trveller </span>
+                  <img href="" alt="" />
+                </a>
+                <a
+                  className="btn--lightBlue btn-navbar--custom px-5 py-2 btn-hasIcon "
+                  href="#companyModal"
+                  data-toggle="modal"
+                  role="button"
+                >
+                  <img
+                    className="btn__icon icon-left"
+                    src="/imagesAndIcons/companyLogo.png"
+                    alt=""
+                  />
+                  <span>Company</span>
+                </a>
+                <div className="header__icons-container mt-5">
+                  <img src="/imagesAndIcons/messenger-1.png" alt="" />
+                  <img src="/imagesAndIcons/movie-tickets.png" alt="" />
+                  <img src="/imagesAndIcons/secure.png" alt="" />
+                </div>
+              </div>
+            </React.Fragment>
+          )}
+
         </aside>
       </header>
     );
   }
 }
 
-const mapStateToProps = (state) => ({ user: state.user });
+const mapStateToProps = (state) => ({ user: state.user, error: state.error });
 export default connect(mapStateToProps)(Header);

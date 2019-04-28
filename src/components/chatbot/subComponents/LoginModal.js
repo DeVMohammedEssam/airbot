@@ -11,7 +11,9 @@ class LoginModal extends Component {
     }
     handleModalSubmit = (e) => {
         e.preventDefault();
-        Axios.post("http://localhost:5000/api/user/login", { data: this.state }).then(({ data }) => {
+        Axios.post("https://823fd3bd.ngrok.io/api/user/login", { data: { ...this.state } }).then(({ data }) => {
+            console.log(this.state);
+
             if (data.success === true) {
                 localStorage.setItem("token", data.token);
                 $("button.close").click();

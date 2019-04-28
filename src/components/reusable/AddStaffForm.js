@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import {withRouter} from "react-router-dom";
 class AddStaffForm extends Component {
     state = {
         name: "",
@@ -12,7 +13,7 @@ class AddStaffForm extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        Axios.post("/staff/add", { data: this.state }).then(({ data }) => {
+        Axios.post("https://823fd3bd.ngrok.io/api/dashboard/staff/add", { data: this.state }).then(({ data }) => {
             if (data.success === true) {
                 this.props.history.push("/dashboard")
             } else {
@@ -69,4 +70,4 @@ class AddStaffForm extends Component {
     }
 }
 
-export default AddStaffForm;
+export default withRouter(AddStaffForm);

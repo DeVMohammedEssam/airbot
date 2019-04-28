@@ -6,9 +6,10 @@ class Home extends Component {
       <div>
         <Header />
         <div className="container" />
-
       </div>
-    );
+    )
+
   }
 }
+
 export default Home;

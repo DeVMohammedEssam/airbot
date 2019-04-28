@@ -3,10 +3,10 @@ import { Link, NavLink, withRouter } from "react-router-dom";
 import { logout } from "../../redux/actions/user";
 import { connect } from "react-redux";
 import $ from "jquery"
-  const onSearch=(e)=>{
-    e.preventDefault()
-    window.location.href="/trips?search="+$("#search").val()
-  }
+const onSearch = (e) => {
+  e.preventDefault()
+  window.location.href = "/trips?search=" + $("#search").val()
+}
 const Navbar = props => {
 
   return (<nav className="navbar navbar-expand-lg bg-orange">
@@ -89,8 +89,8 @@ const Navbar = props => {
                 placeholder="Search"
                 aria-label="Search"
                 name="search"
-               id="search"
-          
+                id="search"
+
                 placeholder="find your trips..."
               />
               <button className=" btn my-2 my-sm-0" type="submit">
@@ -119,21 +119,21 @@ const Navbar = props => {
                 >
                   {props.loggedUser ? (
                     <div>
-                      <Link className="nav-link bg-info" to="/trips">
+                      <Link className="nav-link bg-info" to="/dashboard">
                         my trips
-                        </Link>
+                      </Link>
 
                       {props.loggedUser.type === 1 && (/* show only if company */
                         <Link
                           className="nav-link bg-info"
-                          to="/DashBoard"
+                          to="/dashboard"
                         >
                           Dashboard
                         </Link>
 
                       )}
 
-                      <button className="btn btn-sm btn-link"
+                      <button className="btn btn-sm btn-link  "
                         onClick={() => { props.dispatch(logout()); props.history.push("/") }}
                       >
                         Logout
@@ -155,6 +155,15 @@ const Navbar = props => {
             </div>
 
           </div>
+          {props.loggedUser && (
+            <li className="nav-item d-flex align-items-center">
+              <span className="text-light font-weight-bold">
+                Signed in as: {props.loggedUser.name}
+              </span>
+
+            </li>
+          )}
+
         </ul>
       </div>
     </div>

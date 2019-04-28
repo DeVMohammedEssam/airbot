@@ -1,28 +1,26 @@
 const defaultState = {
     userType: "",
     traveller: {
-        firstName: "",
+        name: "",
         email: "",
-        lastName: "",
         password: "",
         confirmPassword: "",
         gender: "male",
-        date: "",
-        country: "",
-        state: "",
-        type: ""
+        age: "",
+        phone: ""
     },
     company: {
+        password: "",
         companyName: "",
         companyEmail: "",
-        companyPassword: "",
+        address: "",
+        establishment_date: "",
+        describtion: "",
         companyPasswordConfirmation: "",
-        companyCountry: "",
-        companyState: "",
         facebookLink: "",
         LinkedInLink: "",
-        twitterLink: ""
-
+        twitterLink: "",
+        imageFileReader: ""
     },
     loggedUser: null
 

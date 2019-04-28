@@ -61,6 +61,7 @@
         height: 100%;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
 
         img {
           margin-top: 10px;
@@ -85,8 +86,8 @@
 
         h6 {
           color: white;
-          margin-left: 80%;
-          margin-top: 10px;
+          text-align: right;
+
         }
       }
 
